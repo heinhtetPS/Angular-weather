@@ -1,1 +1,23 @@
+.box-middle-content {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.temps {
+  margin: 10px 0px 10px 0px;
+}
+
+.linker {
+  text-decoration: none;
+  color: black;
+}
+
+.linker:hover {
+  text-decoration: underline;
+}
