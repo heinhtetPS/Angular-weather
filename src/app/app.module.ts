@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WeatherappComponent } from './weatherapp/weatherapp.component';
 import { WeatherboxComponent } from './weatherbox/weatherbox.component';
 import { WeatherdetailComponent } from './weatherdetail/weatherdetail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WeatherdetailComponent } from './weatherdetail/weatherdetail.component'
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
