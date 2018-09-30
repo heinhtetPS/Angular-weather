@@ -1,1 +1,6 @@
 Import components before using them from mat
+
+
+- made service for getting weather
+- imported it into the component
+- made model for holding city info
