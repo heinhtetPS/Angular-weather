@@ -16,15 +16,16 @@ export class WeatherappComponent implements OnInit {
    }
 
    getWeather(query: string, target: CityWeather) {
-
+    console.log(query);
+    
    }
 
   ngOnInit() {
-    this.getWeather('?q=brooklyn,us', this.cities[0]);
-    this.getWeather('?q=framingham', this.cities[1]);
-    this.getWeather('?q=redlands', this.cities[2]);
-    this.getWeather('?q=nagoya', this.cities[3]);
-    this.getWeather('?q=yangon', this.cities[4]);
+    this.getWeather('?q=brooklyn,us', this.cities);
+    this.getWeather('?q=framingham', this.cities);
+    this.getWeather('?q=redlands', this.cities);
+    this.getWeather('?q=nagoya', this.cities);
+    this.getWeather('?q=yangon', this.cities);
   }
 
 }

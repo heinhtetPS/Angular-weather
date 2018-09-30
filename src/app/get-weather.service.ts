@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GetWeatherService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http) { }
 
   getWeather(query: string) {
     const staticURL = 'http://api.openweathermap.org/data/2.5/weather';
