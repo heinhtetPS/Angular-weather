@@ -4,3 +4,5 @@ Import components before using them from mat
 - made service for getting weather
 - imported it into the component
 - made model for holding city info
+- verified API call integrity
+- next: form the api call properly and make it do it by itself. 

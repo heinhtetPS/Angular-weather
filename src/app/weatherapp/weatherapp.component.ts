@@ -15,17 +15,19 @@ export class WeatherappComponent implements OnInit {
 
    }
 
-   getWeather(query: string, target: CityWeather) {
-    console.log(query);
+   getWeather(query: string) {
+     const staticURL = 'http://api.openweathermap.org/data/2.5/weather';
+     const appID = '&appid=df00cda1893df4914640c19962cd1427';
+    console.log(staticURL + query + appID);
     
    }
 
   ngOnInit() {
-    this.getWeather('?q=brooklyn,us', this.cities);
-    this.getWeather('?q=framingham', this.cities);
-    this.getWeather('?q=redlands', this.cities);
-    this.getWeather('?q=nagoya', this.cities);
-    this.getWeather('?q=yangon', this.cities);
+    this.getWeather('?q=brooklyn,us');
+    this.getWeather('?q=framingham');
+    this.getWeather('?q=redlands');
+    this.getWeather('?q=nagoya');
+    this.getWeather('?q=yangon');
   }
 
 }
