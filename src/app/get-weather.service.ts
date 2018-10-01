@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 
+import { CityWeather } from './city-weather';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,17 +14,19 @@ export class GetWeatherService {
   getWeather(query: string) {
     const staticURL = 'http://api.openweathermap.org/data/2.5/weather';
     let data: {info: string} = {info: ''};
-    let appID: string = '&appid=df00cda1893df4914640c19962cd1427';
-    let fullURL: string = staticURL + query + appID;
+    const appID: string = '&appid=df00cda1893df4914640c19962cd1427';
+    const fullURL: string = staticURL + query + appID;
 
     // make model first
-    // return this.http.get(fullURL)
-    // .subscribe(response => {
-    //   return response.json();
-    // })
-    // .catch(err => {
-    //   console.log(err);
-    //   return Observable.of(null);
-    // });
+    this.http.get(fullURL)
+    .subscribe(response => {
+      data.info = response.json();
+      return data.info;
+      // this is working here
+      // console.log(data.info);
+    },
+    error => {
+      console.log(error);
+    });
   }
 }

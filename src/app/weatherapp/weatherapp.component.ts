@@ -9,25 +9,23 @@ import { CityWeather } from '../city-weather';
 })
 export class WeatherappComponent implements OnInit {
 
-  private cities: CityWeather[];
+  private cities = [];
 
   constructor(private getWeatherService: GetWeatherService) {
 
    }
 
    getWeather(query: string) {
-     const staticURL = 'http://api.openweathermap.org/data/2.5/weather';
-     const appID = '&appid=df00cda1893df4914640c19962cd1427';
-    console.log(staticURL + query + appID);
-    
+    this.cities.push(this.getWeatherService.getWeather('?q=brooklyn,us'));
+    console.log(this.cities[0]);
    }
 
   ngOnInit() {
     this.getWeather('?q=brooklyn,us');
-    this.getWeather('?q=framingham');
-    this.getWeather('?q=redlands');
-    this.getWeather('?q=nagoya');
-    this.getWeather('?q=yangon');
+    // this.getWeather('?q=framingham');
+    // this.getWeather('?q=redlands');
+    // this.getWeather('?q=nagoya');
+    // this.getWeather('?q=yangon');
   }
 
 }
