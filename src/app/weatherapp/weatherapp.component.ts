@@ -9,19 +9,26 @@ import { CityWeather } from '../city-weather';
 })
 export class WeatherappComponent implements OnInit {
 
-  private cities = [];
+  private cities: CityWeather[];
 
   constructor(private getWeatherService: GetWeatherService) {
 
    }
 
-   getWeather(query: string) {
-    this.cities.push(this.getWeatherService.getWeather('?q=brooklyn,us'));
+   getWeather(query: string, target: number) {
+     let currentWeather = new CityWeather();
+     currentWeather.id = target;
+     currentWeather.name = query;
+    this.getWeatherService.getWeather('?q=brooklyn,us').subscribe(
+      data => { currentWeather.info = data; },
+      err => console.error(err),
+      () => console.log('retrieved city data: ' + currentWeather.info)
+    );
     console.log(this.cities[0]);
    }
 
   ngOnInit() {
-    this.getWeather('?q=brooklyn,us');
+    this.getWeather('?q=brooklyn,us', 0);
     // this.getWeather('?q=framingham');
     // this.getWeather('?q=redlands');
     // this.getWeather('?q=nagoya');
