@@ -9,3 +9,4 @@ Import components before using them from mat
 - next: Angular http call is returning undefined even though it is successful inside service
 - try returning an observable & subscribe OR change the http method 
 - Data is showing up fine in frontend logs, it needs to be put into the state holder
+- In order to resolve failing the PUSH into container, must initialize container in constructor
