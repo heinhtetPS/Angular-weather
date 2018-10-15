@@ -8,3 +8,4 @@ Import components before using them from mat
 - next: form the api call properly and make it do it by itself. 
 - next: Angular http call is returning undefined even though it is successful inside service
 - try returning an observable & subscribe OR change the http method 
+- Data is showing up fine in frontend logs, it needs to be put into the state holder

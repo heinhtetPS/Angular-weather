@@ -20,11 +20,12 @@ export class WeatherappComponent implements OnInit {
      currentWeather.id = target;
      currentWeather.name = query;
     this.getWeatherService.getWeather('?q=brooklyn,us').subscribe(
-      data => { currentWeather.info = data; },
+      data => { 
+        currentWeather.info = data._body;
+        this.cities.push(currentWeather) },
       err => console.error(err),
-      () => console.log('retrieved city data: ' + currentWeather.info)
     );
-    console.log(this.cities[0]);
+    // console.log(this.cities[0]);
    }
 
   ngOnInit() {
